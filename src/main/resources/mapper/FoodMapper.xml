@@ -1,0 +1,11 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ni.cai.pang.mapper.FoodMapper">
+    <resultMap id="BaseResult" type="Food">
+        <id property="id" column="id"></id>
+        <result property="name" column="name"></result>
+        <result property="price" column="price"></result>
+        <result property="imgUrl" column="img_url"></result>
+        <result property="stock" column="stock"></result>
+        <result property="restaurantId" column="restaurant_id"></result>
+    </resultMap>
+</mapper>
