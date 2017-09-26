@@ -1,7 +1,7 @@
 package ni.cai.pang.mapper;
 
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
-public interface UserMapper {
+import tk.mybatis.mapper.common.Mapper;
+
+public interface UserMapper<T> extends Mapper<T> {
 }

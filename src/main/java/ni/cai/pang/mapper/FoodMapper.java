@@ -1,6 +1,6 @@
 package ni.cai.pang.mapper;
-import org.apache.ibatis.annotations.Mapper;
 
-@Mapper
-public interface FoodMapper {
+import tk.mybatis.mapper.common.Mapper;
+
+public interface FoodMapper<T> extends Mapper<T> {
 }
