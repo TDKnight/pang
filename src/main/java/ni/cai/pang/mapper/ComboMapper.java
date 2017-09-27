@@ -7,7 +7,7 @@ import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
-public interface ComboMapper<T> extends Mapper<T> {
+public interface ComboMapper extends Mapper<Combo> {
 
 
     @Select("SELECT * " +

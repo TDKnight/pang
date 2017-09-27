@@ -1,6 +1,7 @@
 package ni.cai.pang.mapper;
 
+import ni.cai.pang.entity.ComboDetail;
 import tk.mybatis.mapper.common.Mapper;
 
-public interface ComboDetailMapper<T> extends Mapper<T>{
+public interface ComboDetailMapper extends Mapper<ComboDetail>{
 }
