@@ -26,6 +26,8 @@ public class Restaurant extends BaseEntity{
     @Column
     private String phone;
 
+    private String imgUrl;
+
     @Column
     @JsonIgnore
     private String userId;
@@ -69,4 +71,14 @@ public class Restaurant extends BaseEntity{
     public void setUserId(String userId) {
         this.userId = userId;
     }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+
 }

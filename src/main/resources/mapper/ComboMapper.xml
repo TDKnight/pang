@@ -1,14 +1,14 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="ni.cai.pang.mapper.ComboMapper">
     
-    <resultMap id="BaseResult" type="Combo">
+    <resultMap id="BaseResult" type="ni.cai.pang.entity.Combo">
         <id property="id" column="id"></id>
         <result property="name" column="name"></result>
         <result property="restaurantId" column="restaurant_id"></result>
         <result property="price" column="price"></result>
         <result property="desc" column="desc"></result>
     </resultMap>
-    <resultMap id="ComboWithFood" type="Combo" extends="BaseResult">
+    <resultMap id="ComboWithFood" type="ni.cai.pang.entity.Combo" extends="BaseResult">
         <collection property="foods" ofType="ni.cai.pang.entity.Food" select="getFoodsByComboId" column="{combo_id=id}"></collection>
     </resultMap>
 

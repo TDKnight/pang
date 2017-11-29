@@ -29,6 +29,7 @@ public class Combo extends BaseEntity{
     @Column
     private String desc;
 
+    @Transient
     private List<Food> foods;
 
     public String getName() {

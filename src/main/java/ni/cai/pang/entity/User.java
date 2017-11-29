@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * @Date 2017/9/26
  */
 @Table(name = "t_user")
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
     @Column
     private String username;
