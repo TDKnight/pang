@@ -1,20 +1,14 @@
-package ni.cai.pang.entity;
-
-
-import org.springframework.data.mongodb.core.mapping.Document;
+package ni.cai.pang.controller.vo;
 
 /**
- * 用户实体
+ * 用户接收类
  *
  * @Author TDKnight
- * @Date 2017/9/26
+ * @Date 2017/12/3
  */
-@Document(collection="user")
-public class User extends BaseEntity {
+public class UserVO {
 
     private String username;
-
-    private String nickname;
 
     private String password;
 
@@ -24,14 +18,6 @@ public class User extends BaseEntity {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getNickname() {
-        return nickname;
-    }
-
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
     }
 
     public String getPassword() {

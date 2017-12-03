@@ -1,35 +1,23 @@
 package ni.cai.pang.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.Column;
-import javax.persistence.Table;
-
 /**
  * 餐厅实体
  *
  * @Author TDKnight
  * @Date 2017/9/26
  */
-@Table(name = "t_restaurant")
 public class Restaurant extends BaseEntity{
 
-    @Column
     private String name;
 
-    @Column
     private String desc;
 
-    @Column
     private String address;
 
-    @Column
     private String phone;
 
     private String imgUrl;
 
-    @Column
-    @JsonIgnore
     private String userId;
 
     public String getName() {

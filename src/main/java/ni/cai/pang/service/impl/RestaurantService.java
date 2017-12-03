@@ -1,6 +1,5 @@
 package ni.cai.pang.service.impl;
 
-import ni.cai.pang.mapper.RestaurantMapper;
 import ni.cai.pang.service.IRestaurantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +13,4 @@ import org.springframework.stereotype.Service;
 @Service
 public class RestaurantService implements IRestaurantService{
 
-    @Autowired
-    private RestaurantMapper restaurantMapper;
 }

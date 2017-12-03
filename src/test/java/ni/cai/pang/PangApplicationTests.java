@@ -1,21 +1,14 @@
 package ni.cai.pang;
 
 import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jws;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.impl.crypto.MacProvider;
 import ni.cai.pang.entity.User;
-import ni.cai.pang.util.JwtUtil;
+import ni.cai.pang.util.JwtUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.security.Key;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -52,10 +45,10 @@ public class PangApplicationTests {
 		user.setId("5566");
 		user.setNickname("TDKnight");
 		user.setPassword("123456");
-		String jwt = JwtUtil.createJWT(user);
+		String jwt = JwtUtils.createJWT(user);
 		Claims claims = null;
 		try {
-			claims = JwtUtil.parseJWT(jwt);
+			claims = JwtUtils.parseJWT(jwt);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

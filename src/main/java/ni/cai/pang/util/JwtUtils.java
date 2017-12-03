@@ -6,7 +6,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import ni.cai.pang.constant.JwtConstant;
+import ni.cai.pang.common.constant.JwtConstant;
 import ni.cai.pang.entity.User;
 
 import javax.crypto.SecretKey;
@@ -16,7 +16,7 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 
-public class JwtUtil {
+public class JwtUtils {
 
     /**
      * 生成密钥

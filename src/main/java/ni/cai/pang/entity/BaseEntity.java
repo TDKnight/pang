@@ -1,10 +1,7 @@
 package ni.cai.pang.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
@@ -16,9 +13,6 @@ import java.io.Serializable;
 public class BaseEntity implements Serializable{
 
     @Id
-    @Column(name = "id")
-    @JsonIgnore
-    @GeneratedValue(generator = "UUID")
     protected String id;
 
     public String getId() {

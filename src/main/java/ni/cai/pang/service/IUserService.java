@@ -1,10 +1,11 @@
 package ni.cai.pang.service;
 
+import ni.cai.pang.controller.vo.UserVO;
 import ni.cai.pang.entity.User;
 
 public interface IUserService {
 
-    int register(User user);
+    void register(UserVO userVO);
 
-    String login(User user);
+    String login(UserVO userVO);
 }

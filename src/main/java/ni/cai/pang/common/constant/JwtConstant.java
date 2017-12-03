@@ -1,4 +1,4 @@
-package ni.cai.pang.constant;
+package ni.cai.pang.common.constant;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

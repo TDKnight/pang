@@ -1,4 +1,4 @@
-package ni.cai.pang.config;
+package ni.cai.pang.common.config;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;

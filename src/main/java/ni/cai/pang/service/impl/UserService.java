@@ -1,19 +1,13 @@
 package ni.cai.pang.service.impl;
 
+import ni.cai.pang.controller.vo.UserVO;
 import ni.cai.pang.entity.User;
-import ni.cai.pang.mapper.UserMapper;
+import ni.cai.pang.repo.UserRepository;
 import ni.cai.pang.service.IUserService;
-import ni.cai.pang.util.JwtUtil;
-import ni.cai.pang.util.MD5Util;
+import ni.cai.pang.util.JwtUtils;
+import ni.cai.pang.util.MD5Utils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import tk.mybatis.mapper.entity.Example;
-
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Base64;
-import java.util.List;
 
 
 /**
@@ -26,32 +20,25 @@ import java.util.List;
 public class UserService implements IUserService{
 
     @Autowired
-    private UserMapper userMapper;
+    private UserRepository userRepository;
 
     @Override
-    public int register(User user) {
-        Example example = new Example(User.class);
-        example.createCriteria()
-                .andEqualTo("username", user.getUsername());
-        int count = userMapper.selectCountByExample(example);
-        if (count > 0) {
-            return -1;
-        } else {
-            user.setPassword(MD5Util.getPwd(user.getPassword()));
-            return userMapper.insert(user);
-        }
+    public void register(UserVO userVO) {
+        User user = new User();
+        user.setUsername(userVO.getUsername());
+        user.setNickname(userVO.getUsername());
+        user.setPassword(MD5Utils.getPwd(userVO.getPassword()));
+        userRepository.save(user);
     }
 
     @Override
-    public String login(User user) {
-        Example example = new Example(User.class);
-        example.createCriteria()
-                .andEqualTo("username", user.getUsername())
-                .andEqualTo("password", MD5Util.getPwd(user.getPassword()));
-        List<User> userList = userMapper.selectByExample(example);
-        if (userList.size() == 1) {
-            return JwtUtil.createJWT(userList.get(0));
+    public String login(UserVO userVO) {
+        String username = userVO.getUsername();
+        User user = userRepository.findByUsername(username);
+        if (user != null) {
+            String password = userVO.getPassword();
+            return user.getPassword().equals(MD5Utils.getPwd(password)) ? JwtUtils.createJWT(user) : "";
         }
-        return null;
+        return "";
     }
 }

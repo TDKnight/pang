@@ -1,18 +1,17 @@
-package ni.cai.pang.entity;
+package ni.cai.pang.controller.vo;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.data.mongodb.core.mapping.Document;
+import ni.cai.pang.entity.Food;
+import ni.cai.pang.entity.Restaurant;
 
 import java.util.List;
 
 /**
- * 套餐实体
+ * 套餐接收
  *
  * @Author TDKnight
- * @Date 2017/9/26
+ * @Date 2017/12/3
  */
-@Document(collection = "combo")
-public class Combo extends BaseEntity{
+public class ComboVO {
 
     private String name;
 
@@ -30,6 +29,14 @@ public class Combo extends BaseEntity{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    public void setRestaurant(Restaurant restaurant) {
+        this.restaurant = restaurant;
     }
 
     public Double getPrice() {
@@ -54,13 +61,5 @@ public class Combo extends BaseEntity{
 
     public void setFoods(List<Food> foods) {
         this.foods = foods;
-    }
-
-    public Restaurant getRestaurant() {
-        return restaurant;
-    }
-
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
     }
 }
