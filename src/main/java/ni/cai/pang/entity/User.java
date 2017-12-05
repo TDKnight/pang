@@ -18,6 +18,8 @@ public class User extends BaseEntity {
 
     private String password;
 
+    private String restaurantId;
+
     public String getUsername() {
         return username;
     }
@@ -40,5 +42,13 @@ public class User extends BaseEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(String restaurantId) {
+        this.restaurantId = restaurantId;
     }
 }

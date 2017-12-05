@@ -1,5 +1,6 @@
 package ni.cai.pang.entity;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import org.springframework.data.annotation.Id;
 
 import java.io.Serializable;
@@ -10,6 +11,7 @@ import java.io.Serializable;
  * @Author TDKnight
  * @Date 2017/9/26
  */
+@JsonInclude(JsonInclude.Include.NON_NULL) // 不转换null值
 public class BaseEntity implements Serializable{
 
     @Id

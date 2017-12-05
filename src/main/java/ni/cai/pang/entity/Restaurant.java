@@ -1,5 +1,9 @@
 package ni.cai.pang.entity;
 
+import org.springframework.data.mongodb.core.mapping.DBRef;
+
+import java.util.List;
+
 /**
  * 餐厅实体
  *
@@ -18,7 +22,12 @@ public class Restaurant extends BaseEntity{
 
     private String imgUrl;
 
-    private String userId;
+    @DBRef
+    private User user;
+
+    private List<Food> foods;
+
+    private List<Combo> combos;
 
     public String getName() {
         return name;
@@ -52,14 +61,6 @@ public class Restaurant extends BaseEntity{
         this.phone = phone;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
     public String getImgUrl() {
         return imgUrl;
     }
@@ -68,5 +69,27 @@ public class Restaurant extends BaseEntity{
         this.imgUrl = imgUrl;
     }
 
+    public User getUser() {
+        return user;
+    }
 
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Food> getFoods() {
+        return foods;
+    }
+
+    public void setFoods(List<Food> foods) {
+        this.foods = foods;
+    }
+
+    public List<Combo> getCombos() {
+        return combos;
+    }
+
+    public void setCombos(List<Combo> combos) {
+        this.combos = combos;
+    }
 }

@@ -18,6 +18,10 @@ public class AjaxResultUtils {
         return new AjaxResult(0, msg, null);
     }
 
+    public static AjaxResult success(Object data) {
+        return new AjaxResult(0, "success", data);
+    }
+
     public static AjaxResult success(String msg, Object data) {
         return new AjaxResult(0, msg, data);
     }

@@ -16,7 +16,7 @@ public class Food extends BaseEntity{
 
     private int stock;
 
-    private Restaurant restaurant;
+    private String restaurantId;
 
     public String getName() {
         return name;
@@ -50,11 +50,11 @@ public class Food extends BaseEntity{
         this.stock = stock;
     }
 
-    public Restaurant getRestaurant() {
-        return restaurant;
+    public String getRestaurantId() {
+        return restaurantId;
     }
 
-    public void setRestaurant(Restaurant restaurant) {
-        this.restaurant = restaurant;
+    public void setRestaurantId(String restaurantId) {
+        this.restaurantId = restaurantId;
     }
 }

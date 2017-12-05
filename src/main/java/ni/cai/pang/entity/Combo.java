@@ -1,6 +1,7 @@
 package ni.cai.pang.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
@@ -16,12 +17,14 @@ public class Combo extends BaseEntity{
 
     private String name;
 
+    @DBRef
     private Restaurant restaurant;
 
     private Double price;
 
     private String desc;
 
+    @DBRef
     private List<Food> foods;
 
     public String getName() {

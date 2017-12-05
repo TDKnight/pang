@@ -16,6 +16,8 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
 import java.util.Arrays;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 /**
  * @Author TDKnight
  * @Date 2017/12/3
@@ -55,4 +57,19 @@ public class ComboControllerTest extends BaseControllerTest{
             e.printStackTrace();
         }
     }
+
+
+    @Test
+    public void findComboById(){
+        String id = "5a26b71f17c7951ef42ee7aa";
+        try {
+            String result = mockMvc.perform(MockMvcRequestBuilders.get("/combo/" + id))
+                    .andExpect(status().isOk())
+                    .andReturn().getResponse().getContentAsString();
+            System.out.println(result);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

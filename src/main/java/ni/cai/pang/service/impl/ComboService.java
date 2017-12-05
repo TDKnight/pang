@@ -26,4 +26,9 @@ public class ComboService implements IComboService {
         combo.setFoods(comboVO.getFoods());
         comboRepository.save(combo);
     }
+
+    @Override
+    public Combo findById(String id) {
+        return comboRepository.findOne(id);
+    }
 }
